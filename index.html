@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakhar Bansal, PMP - Senior Project Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2C3E50;
+            --accent: #3498DB;
+            --success: #27AE60;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg: #ffffff;
+            --bg-light: #f8f9fa;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav .logo span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-intro {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        .about-photo-wrapper {
+            position: relative;
+        }
+
+        .about-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border: 5px solid white;
+        }
+
+        .photo-badge {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            white-space: nowrap;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .highlight-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .highlight-text {
+            color: var(--text);
+        }
+
+        /* Projects Section */
+        #projects {
+            background: var(--bg-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-label {
+            color: var(--text-light);
+        }
+
+        .meta-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .project-description {
+            margin: 1.5rem 0;
+        }
+
+        .project-description li {
+            margin-bottom: 0.8rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--text);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        #experience {
+            background: white;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--bg-light);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-company {
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        /* Skills Section */
+        #skills {
+            background: var(--bg-light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.8rem 0;
+            color: var(--text);
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: "▸";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.8rem;
+        }
+
+        /* Certifications */
+        #certifications {
+            background: white;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .cert-card.primary {
+            border: 3px solid var(--accent);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+        }
+
+        .cert-card.primary .cert-badge {
+            background: var(--accent);
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .cert-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cert-link:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .cert-icon {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-badge-img {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 1.5rem;
+            display: block;
+            object-fit: contain;
+        }
+
+        .cert-name {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .cert-org {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+        }
+
+        #contact .section-label,
+        #contact .section-title,
+        #contact .section-subtitle {
+            color: white;
+        }
+
+        #contact .section-label {
+            opacity: 0.9;
+        }
+
+        #contact .section-subtitle {
+            opacity: 0.8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-value a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .about-photo-wrapper {
+                margin: 0 auto;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .skills-grid,
+            .cert-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Prakhar Bansal <span>PMP</span></div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">PMP Certified • 15+ Years Experience</div>
+                <h1>Prakhar Bansal</h1>
+                <p class="subtitle">Senior Project Manager specializing in ERP implementations, digital transformation,
+                    and large-scale IT program delivery in healthcare and enterprise environments.</p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-number">₹50+ Cr</span>
+                        <span class="stat-label">Budgets Managed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">12,000+</span>
+                        <span class="stat-label">Users Impacted</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">On-Time Delivery</span>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">About Me</div>
+                <h2 class="section-title">Driving Digital Transformation Through Strategic Project Leadership</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-intro">
+                    <div class="about-photo-wrapper">
+                        <img src="PrakharBansal.jpg" alt="Prakhar Bansal" class="about-photo">
+                        <div class="photo-badge">PMP Certified</div>
+                    </div>
+
+                    <div>
+                        <p class="about-text">
+                            I'm a PMP-certified Senior Project Manager with over 15 years of experience leading
+                            enterprise-grade ERP implementations and digital transformation programs. Currently at AIIMS
+                            New Delhi, I manage a ₹30+ Cr integrated HRMS implementation serving 12,000+ users,
+                            demonstrating expertise in vendor governance, stakeholder management, and change leadership.
+                        </p>
+
+                        <p class="about-text">
+                            My unique background combines deep technical expertise (Python, PostgreSQL, AWS) with
+                            strategic project leadership. Having founded and scaled an ERP services company before
+                            transitioning to enterprise project management, I bring both entrepreneurial thinking and
+                            structured PMO methodologies to complex technology initiatives.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🎯</div>
+                        <div class="highlight-text">
+                            <strong>Strategic Leadership:</strong> Led 30+ ERP implementations across healthcare,
+                            manufacturing, and retail sectors with 95%+ on-time delivery rate and 92% client
+                            satisfaction.
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">💼</div>
+                        <div class="highlight-text">
+                            <strong>Enterprise Scale:</strong> Managed ₹50+ Cr project portfolios, coordinating
+                            cross-functional teams of 50+ members and complex multi-vendor ecosystems.
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🔧</div>
+                        <div class="highlight-text">
+                            <strong>Technical Depth:</strong> Expert in Odoo, Tryton, and open-source ERP platforms with
+                            hands-on experience in system architecture, API integrations, and cloud infrastructure.
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">📈</div>
+                        <div class="highlight-text">
+                            <strong>Measurable Impact:</strong> Consistently deliver 30%+ efficiency improvements
+                            through process optimization, governance frameworks, and change management excellence.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Key Projects</div>
+                <h2 class="section-title">Delivering Complex Programs at Scale</h2>
+                <p class="section-subtitle">Flagship implementations demonstrating strategic project leadership,
+                    technical excellence, and measurable business impact</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Integrated HRMS Implementation</h3>
+                            <div class="project-role">Project Lead & SPOC | AIIMS New Delhi</div>
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Budget:</span>
+                            <span class="meta-value">₹30+ Cr</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Users:</span>
+                            <span class="meta-value">12,000+</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Modules:</span>
+                            <span class="meta-value">8+</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline:</span>
+                            <span class="meta-value">2022 - Present</span>
+                        </div>
+                    </div>
+                    <ul class="project-description">
+                        <li>Leading vendor governance and requirements definition for multi-module HR system covering
+                            Payroll, Leave Management, APAR, Attendance, Recruitment, and Employee Self-Service portals
+                        </li>
+                        <li>Established comprehensive governance framework with risk registers, change control
+                            processes, and quality gates ensuring on-schedule delivery with zero critical compliance
+                            issues</li>
+                        <li>Driving user alignment and change management initiatives, achieving 95%+ adoption rate
+                            through structured training programs and stakeholder workshops</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Odoo ERP</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Biometric Integration</span>
+                        <span class="tech-tag">Mobile Apps</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Enterprise HR System Development & Operations</h3>
+                            <div class="project-role">Project Manager | AIIMS</div>
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Budget:</span>
+                            <span class="meta-value">₹15+ Cr</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Users:</span>
+                            <span class="meta-value">12,000+</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Team:</span>
+                            <span class="meta-value">20+ members</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline:</span>
+                            <span class="meta-value">2019 - 2024</span>
+                        </div>
+                    </div>
+                    <ul class="project-description">
+                        <li>Delivered end-to-end HRMS from requirements gathering to 5+ years of stable production
+                            operations, covering APAR digitization, payroll processing, and clinical modules across 6
+                            hospital campuses</li>
+                        <li>Achieved 30% efficiency improvement in HR processing time, maintained 99%+ system uptime,
+                            and ensured less than 5% downtime during critical operations</li>
+                        <li>Integrated biometric systems, mobile applications, and payment gateways for seamless user
+                            experience and operational efficiency</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Tryton</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">AWS (EC2, S3, RDS)</span>
+                        <span class="tech-tag">RESTful APIs</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Multi-Vertical ERP Implementations</h3>
+                            <div class="project-role">Technical Director / Founder CEO</div>
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Projects:</span>
+                            <span class="meta-value">30+</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Markets:</span>
+                            <span class="meta-value">5 Countries</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Retention:</span>
+                            <span class="meta-value">92%</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline:</span>
+                            <span class="meta-value">2012 - 2018</span>
+                        </div>
+                    </div>
+                    <ul class="project-description">
+                        <li>Led 30+ open-source ERP implementations across healthcare, manufacturing, and retail sectors
+                            for clients in India, Malaysia, Kenya, UK, and USA</li>
+                        <li>Customized ERP modules for process reengineering, inventory management, sales automation,
+                            and financial accounting tailored to client-specific workflows</li>
+                        <li>Built and scaled technical teams (20+ members), managed full project lifecycle, and
+                            maintained 92%+ client satisfaction and retention rates</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Odoo</span>
+                        <span class="tech-tag">Tryton</span>
+                        <span class="tech-tag">GNUHealth</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Career Journey</div>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">15+ years of progressive leadership in project management, ERP
+                    implementation, and digital transformation</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Jul 2022 - Present</span>
+                    <h3 class="timeline-title">Senior Project Manager (ERP & IT Projects)</h3>
+                    <p class="timeline-company">All India Institute of Medical Sciences, New Delhi</p>
+                    <ul class="timeline-description">
+                        <li>Serve as SPOC for ₹30+ Cr integrated HRMS implementation managing vendor governance and
+                            stakeholder alignment</li>
+                        <li>Reduced vendor issue resolution time by 20% through structured escalation protocols</li>
+                        <li>Oversee ISO 27001 compliance achieving zero critical findings across all systems</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">Nov 2018 - Jun 2022</span>
+                    <h3 class="timeline-title">Project Manager (Software)</h3>
+                    <p class="timeline-company">All India Institute of Medical Sciences, Delhi</p>
+                    <ul class="timeline-description">
+                        <li>Directed multiple end-to-end IT projects, completing 95% on time and under budget</li>
+                        <li>Mentored junior staff, improving team productivity by 25%</li>
+                        <li>Established best practices improving delivery timelines by 20%</li>
+                        <li>Administered server infrastructure ensuring system stability and scalability</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">Jun 2016 - Aug 2018</span>
+                    <h3 class="timeline-title">Technical Director</h3>
+                    <p class="timeline-company">Apagen Solutions Pvt. Ltd., Noida</p>
+                    <ul class="timeline-description">
+                        <li>Directed Odoo/OpenERP program deliveries for 20+ national and international clients</li>
+                        <li>Scaled technical teams (20+ members) maintaining quality standards for on-time
+                            implementations</li>
+                        <li>Customized ERP modules for process reengineering in manufacturing and retail</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">May 2012 - Jun 2016</span>
+                    <h3 class="timeline-title">Founder & CEO</h3>
+                    <p class="timeline-company">Py Solutions Pvt. Ltd., Ghaziabad</p>
+                    <ul class="timeline-description">
+                        <li>Founded and scaled ERP services firm acquiring 10+ international clients</li>
+                        <li>Managed full technical delivery, team building, and global training programs</li>
+                        <li>Won MSME innovation grant worth ₹6.25 lakhs for IoT-enabled ERP solutions</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">Apr 2011 - Dec 2011</span>
+                    <h3 class="timeline-title">System Engineer</h3>
+                    <p class="timeline-company">Infosys Ltd., Pune</p>
+                    <ul class="timeline-description">
+                        <li>Supported enterprise Java/Oracle applications in manufacturing vertical</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Expertise</div>
+                <h2 class="section-title">Skills & Competencies</h2>
+                <p class="section-subtitle">Comprehensive expertise spanning project management methodologies, technical
+                    platforms, and leadership capabilities</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Program & Project Management</h3>
+                    <ul class="skill-list">
+                        <li>Agile, SAFe, Waterfall, Hybrid Methodologies</li>
+                        <li>PMBOK Knowledge Areas (Full Lifecycle)</li>
+                        <li>Budget & Resource Management (₹50+ Cr)</li>
+                        <li>Vendor & Change Management</li>
+                        <li>MS Project, Jira, Trello, Smartsheet</li>
+                        <li>Risk & Stakeholder Management</li>
+                        <li>UAT Planning & Quality Assurance</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Technical & Functional</h3>
+                    <ul class="skill-list">
+                        <li>Odoo & Tryton (Expert Level)</li>
+                        <li>Python (Advanced), RESTful APIs</li>
+                        <li>PostgreSQL (Advanced), MongoDB</li>
+                        <li>AWS (EC2, S3, RDS), Cloud Infrastructure</li>
+                        <li>Ubuntu Linux Server Administration</li>
+                        <li>Git, GitHub, GitLab, CI/CD</li>
+                        <li>System Architecture & Design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Leadership & Strategy</h3>
+                    <ul class="skill-list">
+                        <li>Cross-Functional Team Leadership (50+)</li>
+                        <li>Stakeholder Engagement & Communication</li>
+                        <li>Change Management & Transformation</li>
+                        <li>Process Optimization & Reengineering</li>
+                        <li>Conflict Resolution & Negotiation</li>
+                        <li>Training & Mentorship Programs</li>
+                        <li>Strategic Planning & Execution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Credentials</div>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">PMP certified with ongoing professional development in AI, Agile, and
+                    advanced PM methodologies</p>
+
+            </div>
+
+            <div class="cert-grid">
+                <div class="cert-card primary">
+                    <img src="https://images.credly.com/images/731e7ef4-9b0c-4d7b-ab65-23cc699c0aa3/blob
+" alt="PMP Badge" class="cert-badge-img">
+                    <div class="cert-name">Project Management Professional (PMP)</div>
+                    <div class="cert-org">Project Management Institute (PMI)</div>
+                    <div class="cert-date">Valid: Nov 2023 - Nov 2026</div>
+                    <div class="cert-badge">Active</div>
+                    <a href="https://www.credly.com/badges/96dc8181-923a-40d2-8fe0-44a6d85aa394/public_url"
+                        target="_blank" class="cert-link">View
+                        Certificate</a>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-name">OpenERP Functional & Customization</div>
+                    <div class="cert-org">Pragmatics Techsoft Pvt. Ltd.</div>
+                    <div class="cert-date">Certified: 2010</div>
+                </div>
+
+                <!-- Add more PMI badges below -->
+                <div class="cert-card">
+                    <img src="https://images.credly.com/size/340x340/images/218794c2-f7c2-4ab8-9839-b97ee7b3c5ee/blob"
+                        alt="PMI - M.O.R.E." class="cert-badge-img">
+                    <div class="cert-name">PMI Essentials M.O.R.E. Maximizing Project Success</div>
+                    <div class="cert-org">Project Management Institute (PMI)</div>
+                    <div class="cert-date">Earned: 2025</div>
+                    <div class="cert-badge">Earned</div>
+                    <a href="https://www.credly.com/badges/fee36c2c-408c-47ec-b9e7-9e77eaf4714b" target="_blank"
+                        class="cert-link">View
+                        Badge</a>
+                </div>
+
+                <div class="cert-card">
+                    <img src="https://images.credly.com/size/340x340/images/aa42e8b5-b36d-4b8c-abbe-c6a6f51fd7d9/blob"
+                        alt="Talking to AI" class="cert-badge-img">
+                    <div class="cert-name">Talking to AI: Prompt Engineering for Project Managers</div>
+                    <div class="cert-org">Project Management Institute (PMI)</div>
+                    <div class="cert-date">Earned: Oct, 2025</div>
+                    <div class="cert-badge">Earned</div>
+                    <a href="https://www.credly.com/badges/fb399946-7d6e-452a-8434-d70c8a471a28/public_url"
+                        target="_blank" class="cert-link">View
+                        Badge</a>
+                </div>
+                <div class="cert-card">
+                    <img src="https://images.credly.com/size/340x340/images/0c4e1dd5-5d3c-4974-9720-e09af4302e5e/blob"
+                        alt="Badge Name" class="cert-badge-img">
+                    <div class="cert-name">Practical Application of Gen AI for Project Managers</div>
+                    <div class="cert-org">Project Management Institute (PMI)</div>
+                    <div class="cert-date">Earned: JUNE 2025</div>
+                    <div class="cert-badge">Earned</div>
+                    <a href="https://www.credly.com/badges/39dcf07c-f247-44c2-b033-698c2ce27ff3/public_url"
+                        target="_blank" class="cert-link">View Badge</a>
+
+                    <!-- Add as many as you need following the same pattern -->
+                    <!-- <div class="cert-card">
+                    <img src="CREDLY_IMAGE_URL_HERE" alt="Badge Name" class="cert-badge-img">
+                    <div class="cert-name">CERTIFICATION NAME</div>
+                    <div class="cert-org">Project Management Institute (PMI)</div>
+                    <div class="cert-date">Earned: MONTH YEAR</div>
+                    <div class="cert-badge">New</div>
+                    <a href="YOUR_CREDLY_BADGE_URL" target="_blank" class="cert-link">View Badge</a>
+                </div> -->
+                </div>
+            </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Get In Touch</div>
+                <a href="Prakhar_Bansal_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Open to Senior Project Manager and Program Manager
+                    opportunities in ERP implementation, digital transformation, and healthcare IT
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value"><a href="mailto:bansal.prakhar@gmail.com">bansal.prakhar@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value"><a href="tel:+918800821089">+91 8800 821 089</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value"><a href="https://linkedin.com/in/bansalprakhar"
+                            target="_blank">linkedin.com/in/bansalprakhar</a></div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">Location</div>
+                    <div class="contact-value">Delhi/NCR, India<br><small>(Open to
+                            Relocation)</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prakhar Bansal. All rights reserved.</p>
+        </div>
+    </footer>
